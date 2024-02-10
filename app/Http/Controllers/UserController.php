@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserSaved;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Exception;
@@ -55,7 +56,9 @@ class UserController extends Controller
             $data['photo'] = Storage::url($path);
         }
 
-        User::create($data);
+        $user =  User::create($data);
+
+        event(new UserSaved($user));
 
         return redirect()->route('users.index')->with('success', 'User created successfully.');
 

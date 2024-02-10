@@ -22,22 +22,22 @@
                 <x-alert-message type="error"  class="bg-red-100 p-4 rounded my-4" />
 
 
-                <table class="min-w-full leading-normal">
-                    <thead>
+                <table class="min-w-full leading-normal dark:bg-gray-900 dark:text-white">
+                    <thead class="dark:bg-gray-900 dark:text-white">
                     <tr>
-                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
+                        <th class=" px-5 py-3 border-b-2 border-gray-200 text-gray-800  text-left text-sm uppercase font-normal dark:bg-gray-900  dark:text-white dark:border-gray-500">
                             Name
                         </th>
-                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
+                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800  text-left text-sm uppercase font-normal dark:bg-gray-900 dark:text-white dark:border-gray-500">
                             Email
                         </th>
-                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800 text-left text-sm uppercase font-normal">
+                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800 text-left text-sm uppercase font-normal dark:bg-gray-900 dark:text-white dark:border-gray-500">
                             Username
                         </th>
-                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800 text-left text-sm uppercase font-normal">
+                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800 text-left text-sm uppercase font-normal dark:bg-gray-900 dark:text-white dark:border-gray-500">
                             Type
                         </th>
-                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800 text-left text-sm uppercase font-normal">
+                        <th class="px-5 py-3 border-b-2 border-gray-200 text-gray-800 text-left text-sm uppercase font-normal dark:bg-gray-900 dark:text-white dark:border-gray-500">
                             Actions
                         </th>
                     </tr>
@@ -45,25 +45,25 @@
                     <tbody>
                     @foreach ($users as $user)
                         <tr>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm dark:bg-gray-700 dark:border-gray-500">
                                 <div class="flex items-center">
                                     <div class="ml-3">
-                                        <p class="text-gray-900 whitespace-no-wrap">
+                                        <p class="text-gray-900 whitespace-no-wrap dark:text-white">
                                             {{ $user->firstname }} {{ $user->lastname }}
                                         </p>
                                     </div>
                                 </div>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $user->email }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm dark:bg-gray-700 dark:border-gray-500">
+                                <p class="text-gray-900 whitespace-no-wrap dark:text-white">{{ $user->email }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $user->username }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm dark:bg-gray-700 dark:border-gray-500">
+                                <p class="text-gray-900 whitespace-no-wrap dark:text-white">{{ $user->username }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                <p class="text-gray-900 whitespace-no-wrap">{{ $user->type }}</p>
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm dark:bg-gray-700 dark:border-gray-500">
+                                <p class="text-gray-900 whitespace-no-wrap dark:text-white">{{ $user->type }}</p>
                             </td>
-                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                            <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm dark:bg-gray-700 dark:border-gray-500">
                                 <div class="flex space-x-3">
                                     <a href="{{ route('users.show', $user->id) }}" class="text-blue-600 hover:text-blue-900">Show</a>
                                     <a href="{{ route('users.edit', $user->id) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
@@ -79,7 +79,7 @@
                     </tbody>
                 </table>
                 <!-- Pagination -->
-                <div class="px-5 py-5 bg-white border-t  xs:flex-row items-center xs:justify-between">
+                <div class="px-5 py-5 bg-white border-t  xs:flex-row items-center xs:justify-between dark:bg-gray-700 dark:border-gray-500">
                     {{ $users->links() }}
                 </div>
 
